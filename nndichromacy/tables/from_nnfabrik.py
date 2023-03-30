@@ -131,7 +131,7 @@ class ScoringTable(ScoringBase):
             if self.measure_dataset == "test"
             else self.get_dataloaders(key=key)
         )
-        model = self.get_model(key=key)
+        model, _ = self.get_model(key=key)
         unit_measures_dict = self.measure_function(
             model=model,
             dataloaders=dataloaders,
