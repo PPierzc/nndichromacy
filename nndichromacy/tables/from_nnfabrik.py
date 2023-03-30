@@ -114,11 +114,11 @@ class ScoringTable(ScoringBase):
     def get_model(self, key=None):
         if self.model_cache is None:
             model = self.trainedmodel_table().load_model(
-                key=key, include_state_dict=True, include_dataloader=False
+                key=key
             )
         else:
             model = self.model_cache.load(
-                key=key, include_state_dict=True, include_dataloader=False
+                key=key
             )
         model.eval()
         model.to("cuda")
